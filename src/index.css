@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Playfair Display', Georgia, Cambria, 'Times New Roman', serif;
+  --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-scribble: 'Caveat', 'Dancing Script', 'Marck Script', cursive;
+}
+
+.font-scribble {
+  font-family: 'Caveat', 'Dancing Script', 'Marck Script', cursive;
+}
+
+/* Ancient parchment textures and wood rollers */
+.parchment-paper {
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(255, 252, 243, 0.98) 0%, rgba(246, 233, 206, 0.95) 70%, rgba(218, 178, 126, 0.95) 100%),
+    linear-gradient(to right, #9c6735 0%, #d8b27f 2%, #fbf3df 7%, #fefcf6 50%, #fbf3df 93%, #d8b27f 98%, #9c6735 100%);
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.75),
+    inset 0 0 50px rgba(139, 87, 42, 0.28),
+    inset 0 16px 20px -8px rgba(60, 30, 10, 0.55),
+    inset 0 -16px 20px -8px rgba(60, 30, 10, 0.55);
+}
+
+.wood-roller {
+  background: linear-gradient(
+    180deg,
+    #421f0b 0%,
+    #683716 15%,
+    #b87841 38%,
+    #e7ae75 48%,
+    #caa068 53%,
+    #7a3f1a 78%,
+    #3b1b08 100%
+  );
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.65), inset 0 1px 2px rgba(255, 230, 190, 0.4);
+}
+
+.wood-finial {
+  background: radial-gradient(
+    circle at 35% 35%,
+    #e9b278 0%,
+    #ba783f 40%,
+    #703917 75%,
+    #3d1a08 100%
+  );
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #08050e;
+  color: #fff;
+  font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom animations & smooth transitions */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
